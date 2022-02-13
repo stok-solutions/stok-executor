@@ -1,13 +1,10 @@
 import org.jetbrains.compose.compose
 
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose") version "1.0.0"
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.compose)
     id("com.android.library")
 }
-
-group = "fun.stok.executor"
-version = "1.0.0"
 
 kotlin {
     android()
@@ -50,11 +47,11 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(31)
+    compileSdk = 31
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(31)
+        minSdk = 24
+        targetSdk = 31
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

@@ -1,0 +1,200 @@
+# === VERSIONS BLOCK === #
+[versions]
+
+## Spring Versions ##
+spring-data-mongodb = { strictly = "[3.3, 3.4[", prefer = "3.3.1" } # Spring Data MongoDB | https://github.com/spring-projects/spring-data-mongodb
+spring-data-r2dbc = { strictly = "[1.4, 1.5[", prefer = "1.4.1" } # Spring Data R2DBC | https://github.com/spring-projects/spring-data-r2dbc
+spring-data-jdbc = { strictly = "[2.3, 2.4[", prefer = "2.3.1" } # Spring Data JDBC | https://github.com/spring-projects/spring-data-jdbc
+spring-data = { strictly = "[2.6, 2.7[", prefer = "2.6.1" } # Spring Data Core | https://github.com/spring-projects/spring-data-commons
+spring-kafka = { strictly = "[2.8, 2.9[", prefer = "2.8.2" } # Spring Kafka | https://github.com/spring-projects/spring-kafka
+spring-batch = { strictly = "[4.3, 4.4[", prefer = "4.3.4" } # Spring Batch | https://github.com/spring-projects/spring-batch
+spring-retry = { strictly = "[1.3, 1.4[", prefer = "1.3.1" } # Spring Retry | https://github.com/spring-projects/spring-retry
+spring-boot = { strictly = "[2.6, 2.7[", prefer = "2.6.3" } # Spring Boot | https://github.com/spring-projects/spring-boot
+spring = { strictly = "[5.3, 5.4[", prefer = "5.3.15" } # Spring Framework | https://github.com/spring-projects/spring-framework
+
+
+## Project Reactor Libraries ##
+reactor = { strictly = "[3.4, 3.5[", prefer = "3.4.14" } # Reactor Kotlin Extensions | https://github.com/reactor/reactor
+reactor-kotlin = { strictly = "[1.1, 1.2[", prefer = "1.1.5" } # Reactor Kotlin Extensions | https://github.com/reactor/reactor-kotlin-extensions
+reactor-netty = { strictly = "[1.0, 1.1[", prefer = "1.0.15" } # Reactor Netty | https://github.com/reactor/reactor-netty
+
+
+## Platform Specific Versions ##
+androidx-activityCompose = "1.3.0" # Compose integration with Activity | https://mvnrepository.com/artifact/androidx.activity/activity-compose
+
+kotlin = "1.6.10" # The Kotlin Programming Language | https://github.com/JetBrains/kotlin
+java = "17" # Java Programming Language | https://github.com/openjdk/jdk
+
+log4j2 = { strictly = "[2.17, 3.0[", prefer = "2.17.1" } # Java Logging Framework | https://github.com/apache/logging-log4j2
+slf4j = { strictly = "[1.7, 2.0[", prefer = "1.7.35" } # The Simple Logging Facade for Java (SLF4J) | https://github.com/qos-ch/slf4j
+
+
+## Standard Versions ##
+springfox = { require = "[3.0, 4.0[", prefer = "3.0.0" } # Spring Automated JSON API documentation | https://github.com/springfox/springfox
+liquibase = { strictly = "[4.6, 5.0[", prefer = "4.7.1" } # Library for Tracking, Managing and Applying Databaseschema Changes | https://github.com/liquibase/liquibase
+
+exposed = { strictly = "[0.37, 1.0[", prefer = "0.37.3" } # Kotlin SQL Framework | https://github.com/JetBrains/Exposed
+arrow = { strictly = "[1.0, 2.0[", prefer = "1.0.1" } # Functional companion to Kotlin's Standard Library | https://github.com/arrow-kt/arrow
+
+kotlinx-coroutines = { strictly = "1.6.0", prefer = "1.6.0" } # Kotlin Coroutines Support | https://github.com/Kotlin/kotlinx.coroutines
+benasher44Uuid = { strictly = "[0.3, 1.0[", prefer = "0.4.0" } # Kotlin Multiplatform UUID | https://github.com/benasher44/uuid
+kotlinLogging = { strictly = "[2.1, 2.2[", prefer = "2.1.21" } # Kotlin Logging Framework | https://github.com/MicroUtils/kotlin-logging
+
+
+## Testing Versions ##
+mockk = { strictly = "[1.12, 2.0[", prefer = "1.12.2" } # Kotlin Mocking Library | https://github.com/mockk/mockk
+
+
+## Plugin Versions ##
+gradle-plugins-compose = "1.0.1" # UI framework for building interfaces | https://github.com/JetBrains/compose-jb
+gradle-plugins-spotless = "6.2.2" # Keep your code spotless | https://github.com/diffplug/spotless
+gradle-plugins-ktlint = "0.43.2" # An anti-bikeshedding Kotlin linter with built-in formatter | https://github.com/pinterest/ktlint
+gradle-plugins-detekt = "1.19.0" # Static code analysis for Kotlin | https://github.com/detekt/detekt
+gradle-plugins-android = "7.0.4" # Gradle plug-in to build Android applications | https://developer.android.com/studio/build
+
+jdbcDrivers-postgresql = { strictly = "[42.3, 42.4[", prefer = "42.3.2" } # RDBMS | https://github.com/postgres/postgres
+
+
+
+# === LIBRARIES BLOCK === #
+[libraries]
+
+## Spring Boot Libraries ##
+spring-boot-starter-integration = { module = "org.springframework.boot:spring-boot-starter-integration", version.ref = "spring-boot" }
+spring-boot-starter-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator", version.ref = "spring-boot" }
+spring-boot-starter-security = { module = "org.springframework.boot:spring-boot-starter-security", version.ref = "spring-boot" }
+spring-boot-starter-webflux = { module = "org.springframework.boot:spring-boot-starter-webflux", version.ref = "spring-boot" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "spring-boot" }
+spring-boot-starter-cache = { module = "org.springframework.boot:spring-boot-starter-cache", version.ref = "spring-boot" }
+spring-boot-starter-log4j2 = { module = "org.springframework.boot:spring-boot-starter-log4j2", version.ref = "spring-boot" }
+spring-boot-starter-json = { module = "org.springframework.boot:spring-boot-starter-json", version.ref = "spring-boot" }
+spring-boot-starter-validation = { module = "org.springframework.boot:spring-boot-starter-validation", version.ref = "spring-boot" }
+spring-boot-starter-aop = { module = "org.springframework.boot:spring-boot-starter-aop", version.ref = "spring-boot" }
+spring-boot-autoconfigure-actuator = { module = "org.springframework.boot:spring-boot-actuator-autoconfigure", version.ref = "spring-boot" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-actuator", version.ref = "spring-boot" }
+spring-boot-devtools = { module = "org.springframework.boot:spring-boot-devtools", version.ref = "spring-boot" }
+spring-boot-autoconfigureProcessor = { module = "org.springframework.boot:spring-boot-autoconfigure-processor", version.ref = "spring-boot" }
+spring-boot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure", version.ref = "spring-boot" }
+spring-boot-configurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "spring-boot" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "spring-boot" }
+spring-boot = { module = "org.springframework.boot:spring-boot", version.ref = "spring-boot" }
+
+
+## Spring Libraries ##
+spring-retry = { module = "org.springframework.retry:spring-retry", version.ref = "spring-retry" }
+spring-webflux = { module = "org.springframework:spring-webflux", version.ref = "spring" }
+spring-webmvc = { module = "org.springframework:spring-webmvc", version.ref = "spring" }
+spring-web = { module = "org.springframework:spring-web", version.ref = "spring" }
+spring-aspects = { module = "org.springframework:spring-aspects", version.ref = "spring" }
+spring-tx = { module = "org.springframework:spring-tx", version.ref = "spring" }
+spring-aop = { module = "org.springframework:spring-aop", version.ref = "spring" }
+spring-expression = { module = "org.springframework:spring-expression", version.ref = "spring" }
+spring-contextSupport = { module = "org.springframework:spring-context-support", version.ref = "spring" }
+spring-beans = { module = "org.springframework:spring-beans", version.ref = "spring" }
+spring-context = { module = "org.springframework:spring-context", version.ref = "spring" }
+spring-core = { module = "org.springframework:spring-core", version.ref = "spring" }
+
+
+## Exposed Libraries ##
+exposed = { module = "org.jetbrains.exposed:exposed", version.ref = "exposed" }
+exposed-bom = { module = "org.jetbrains.exposed:exposed-bom", version.ref = "exposed" }
+exposed-springBootStarter = { module = "org.jetbrains.exposed:exposed-spring-boot-starter", version.ref = "exposed" }
+exposed-springTransaction = { module = "org.jetbrains.exposed:spring-transaction", version.ref = "exposed" }
+exposed-dao = { module = "org.jetbrains.exposed:exposed-dao", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+exposed-money = { module = "org.jetbrains.exposed:exposed-money", version.ref = "exposed" }
+exposed-jodatime = { module = "org.jetbrains.exposed:exposed-jodatime", version.ref = "exposed" }
+exposed-datetime = { module = "org.jetbrains.exposed:exposed-kotlin-datetime", version.ref = "exposed" }
+exposed-javaTime = { module = "org.jetbrains.exposed:exposed-java-time", version.ref = "exposed" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+
+
+## Project Reactor Libraries ##
+reactor-core = { module = "io.projectreactor:reactor-core", version.ref = "reactor" }
+reactor-kotlin-extensions = { module = "io.projectreactor.kotlin:reactor-kotlin-extensions", version.ref = "reactor-kotlin" }
+reactor-reactor-netty = { module = "io.projectreactor.netty:reactor-netty", version.ref = "reactor-netty" }
+reactor-reactor-netty-core = { module = "io.projectreactor.netty:reactor-netty-core", version.ref = "reactor-netty" }
+reactor-reactor-netty-http = { module = "io.projectreactor.netty:reactor-netty-http", version.ref = "reactor-netty" }
+
+
+## Standard Libraries ##
+springfox-bootStarter = { module = "io.springfox:springfox-boot-starter", version.ref = "springfox" }
+liquibase-core = { module = "org.liquibase:liquibase-core", version.ref = "liquibase" }
+
+kotlinLogging-jvm = { module = "io.github.microutils:kotlin-logging-jvm", version.ref = "kotlinLogging" }
+benasher44Uuid = { module = "com.benasher44:uuid", version.ref = "benasher44Uuid" }
+
+kotlinx-coroutines-jdk8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "kotlinx-coroutines" }
+
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+kotlin-stdlib-jdk8 = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8", version.ref = "kotlin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+kotlin-bom = { module = "org.jetbrains.kotlin:kotlin-bom", version.ref = "kotlin" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+kotlin-testJunit5 = { module = "org.jetbrains.kotlin:kotlin-test-junit5", version.ref = "kotlin" }
+
+
+## Platform Specific Versions ##
+androidx-activityCompose = { module = "androidx.activity:activity-compose", version = "1.3.0" } # Compose integration with Activity | https://mvnrepository.com/artifact/androidx.activity/activity-compose
+
+log4j2-web = { module = "org.apache.logging.log4j:log4j-web", version.ref = "log4j2" }
+log4j2-slf4jImpl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j2" }
+log4j2-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j2" }
+log4j2-jul = { module = "org.apache.logging.log4j:log4j-jul", version.ref = "log4j2" }
+log4j2-api = { module = "org.apache.logging.log4j:log4j-api", version.ref = "log4j2" }
+
+slf4j-binding-log4j12 = { module = "org.slf4j:slf4j-log4j12", version.ref = "slf4j" }
+slf4j-binding-nop = { module = "org.slf4j:slf4j-nop", version.ref = "slf4j" }
+slf4j-binding-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+
+arrow-optics-kspPlugin = { module = "io.arrow-kt:arrow-optics-ksp-plugin", version.ref = "arrow" }
+arrow-optics = { module = "io.arrow-kt:arrow-optics", version.ref = "arrow" }
+arrow-fx-stm = { module = "io.arrow-kt:arrow-fx-stm", version.ref = "arrow" }
+arrow-fx-coroutines = { module = "io.arrow-kt:arrow-fx-coroutines", version.ref = "arrow" }
+arrow-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrow" }
+arrow-bom = { module = "io.arrow-kt:arrow-stack", version.ref = "arrow" }
+
+
+## Testing Libraries ##
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+
+
+## Plugin Libraries ##
+gradle-plugins-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradle-plugins-android = { module = "com.android.tools.build:gradle", version.ref = "gradle-plugins-android" }
+
+jdbcDrivers-postgresql = { module = "org.postgresql:postgresql", version.ref = "jdbcDrivers-postgresql" }
+
+
+## Specific Libraries ##
+# Kotlin data class for Semantic Versioning 2.0.0 specification (SemVer)
+# GitHub: https://github.com/swiftzer/semver
+# Artifacts: https://mvnrepository.com/artifact/net.swiftzer.semver/semver
+semver = { module = "net.swiftzer.semver:semver", version = "1.2.0" }
+
+
+
+# === BUNDLES BLOCK === #
+[bundles]
+
+log4jRuntime = ["log4j2-web", "log4j2-slf4jImpl", "log4j2-core", "log4j2-jul", "log4j2-api"]
+log4j = ["log4j2-jul", "log4j2-api"]
+
+arrow = ["arrow-optics-kspPlugin", "arrow-optics", "arrow-fx-stm", "arrow-fx-coroutines", "arrow-core"]
+kotlin-base = ["kotlin-reflect", "kotlin-stdlib", "kotlin-stdlib-jdk8", "benasher44Uuid", "kotlinLogging-jvm"]
+kotlinx-coroutines = ["kotlinx-coroutines-reactor", "kotlinx-coroutines-jdk8", "reactor-kotlin-extensions"]
+kotlin-testing = ["kotlin-testJunit5", "mockk"]
+
+
+
+# === PLUGINS BLOCK === #
+[plugins]
+compose = { id = "org.jetbrains.compose", version.ref = "gradle-plugins-compose" }
+
+spotless = { id = "com.diffplug.spotless", version.ref = "gradle-plugins-spotless" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "gradle-plugins-detekt" }
+
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

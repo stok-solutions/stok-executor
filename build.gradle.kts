@@ -1,34 +1,68 @@
+import com.diffplug.gradle.spotless.SpotlessExtension
+import com.diffplug.gradle.spotless.SpotlessPlugin
+import io.gitlab.arturbosch.detekt.DetektPlugin
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
+
 buildscript {
     repositories {
         gradlePluginPortal()
-        jcenter()
         google()
         mavenCentral()
     }
+
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath(libs.gradle.plugins.kotlin)
+        classpath(libs.gradle.plugins.android)
+        classpath(libs.semver)
     }
 }
 
-group = "fun.stok.executor"
-version = "1.0.0"
+plugins {
+    alias(libs.plugins.compose) apply(false)
+    alias(libs.plugins.kotlin.multiplatform) apply(false)
+
+    alias(libs.plugins.spotless) apply(false)
+    alias(libs.plugins.detekt) apply(false)
+}
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
 
     buildDir = run {
-        val globalBuildDirectory = project.rootProject.projectDir.resolve("build")
+        val globalBuildDirectory = rootProject.projectDir.resolve("build")
         when (project) {
             rootProject -> globalBuildDirectory.resolve(project.name)
             else -> {
-                val relativePath = project.projectDir.relativeTo(project.rootProject.projectDir)
+                val relativePath = projectDir.relativeTo(rootProject.projectDir)
                 globalBuildDirectory.resolve(relativePath)
             }
+        }
+    }
+}
+
+subprojects {
+    apply<SpotlessPlugin>()
+    apply<DetektPlugin>()
+
+    extensions.configure<SpotlessExtension> {
+        kotlin {
+            target("**/*.kt")
+            ktlint(libs.versions.gradle.plugins.ktlint.get())
+            trimTrailingWhitespace()
+            indentWithSpaces()
+            endWithNewline()
+        }
+    }
+
+    afterEvaluate {
+        extensions.configure<DetektExtension> {
+            toolVersion = libs.versions.gradle.plugins.detekt.get()
+            parallel = true
+            buildUponDefaultConfig = true
+            autoCorrect = true
         }
     }
 }

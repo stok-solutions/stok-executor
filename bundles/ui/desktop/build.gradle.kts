@@ -2,12 +2,9 @@ import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
-    kotlin("multiplatform")
-    id("org.jetbrains.compose") version "1.0.0"
+    alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.compose)
 }
-
-group = "fun.stok.executor"
-version = "1.0.0"
 
 kotlin {
     jvm {
@@ -19,7 +16,7 @@ kotlin {
     sourceSets {
         val jvmMain by getting {
             dependencies {
-                implementation(project(":common"))
+                implementation(projects.bundles.ui.common)
                 implementation(compose.desktop.currentOs)
             }
         }
@@ -33,7 +30,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "jvm"
-            packageVersion = "1.0.0"
+            packageVersion = project.version as String
         }
     }
 }
